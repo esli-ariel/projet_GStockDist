@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Entity
-@Table(name = "Categorieproduit")
+@Table(name = "categorieproduit")
 public class Categorieproduit extends AbstractEntity {
     @Column(name = "code")
     private String code;
@@ -21,5 +21,5 @@ public class Categorieproduit extends AbstractEntity {
     private String designation;
 
     @OneToMany(mappedBy = "categorieproduit")
-    private List<Produit> produits;
+    private List<Produit> produit;
 }

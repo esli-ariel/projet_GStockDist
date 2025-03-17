@@ -7,6 +7,8 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import jakarta.persistence.*;
+
+import java.time.Instant;
 import java.util.List;
 
 @Data
@@ -14,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Entity
-@Table(name = "Commandeentrepot")
+@Table(name = "commandeentrepot")
 public class Commandeentrepot extends AbstractEntity {
     @Column(name = "code")
     private String code;
@@ -27,10 +29,10 @@ public class Commandeentrepot extends AbstractEntity {
     private EtatCommande etatCommande;
 
     @ManyToOne
-    @JoinColumn(name = "idMagasin")
-    private Magasin magasins;
+    @JoinColumn(name = "idmagasin")
+    private Magasin magasin;
 
-    @OneToMany(mappedBy = "commandeEntrepot")
-    private List<LigneCommandeEntrepot> ligneCommandeEntrepots;
-
+    @ManyToOne
+    @JoinColumn(name = "entrepot_id") // Vérifiez l'existence de cette colonne en BDD
+    private Entrepot entrepot;
 }
