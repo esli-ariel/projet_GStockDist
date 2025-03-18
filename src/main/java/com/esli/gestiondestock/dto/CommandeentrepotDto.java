@@ -26,16 +26,16 @@ public class CommandeentrepotDto {
 
     private EntrepotDto entrepot;
 
-    public static CommandeentrepotDto fromEntity(Commandeentrepot commandeClient) {
-        if (commandeClient == null) {
+    public static CommandeentrepotDto fromEntity(Commandeentrepot commandeentrepot) {
+        if (commandeentrepot == null) {
             return null;
         }
         return CommandeentrepotDto.builder()
-                .id(commandeClient.getId())
-                .code(commandeClient.getCode())
-                .dateCommande(commandeClient.getDateCommande())
-                .etatCommande(commandeClient.getEtatCommande())
-                .magasin(MagasinDto.fromEntity(Commandeentrepot.getMagasin()))
+                .id(commandeentrepot.getId())
+                .code(commandeentrepot.getCode())
+                .dateCommande(commandeentrepot.getDateCommande())
+                .etatCommande(commandeentrepot.getEtatCommande())
+                .magasin(MagasinDto.fromEntity(commandeentrepot.getMagasin()))
                 .build();
 
     }
