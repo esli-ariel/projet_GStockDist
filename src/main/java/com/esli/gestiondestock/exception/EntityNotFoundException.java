@@ -1,4 +1,5 @@
-package com.bouali.gestiondestock.exception;
+package com.esli.gestiondestock.exception;
+
 
 import lombok.Getter;
 

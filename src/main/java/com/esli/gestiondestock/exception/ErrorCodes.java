@@ -1,4 +1,4 @@
-package com.bouali.gestiondestock.exception;
+package com.esli.gestiondestock.exception;
 
 public enum ErrorCodes {
 
