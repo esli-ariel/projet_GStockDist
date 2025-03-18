@@ -36,6 +36,6 @@ public class Commandeentrepot extends AbstractEntity {
     @JoinColumn(name = "entrepot_id") // Vérifiez l'existence de cette colonne en BDD
     private Entrepot entrepot;
 
-    @OneToMany(mappedBy = "commandeEntrepot")
+    @OneToMany(mappedBy = "commandeentrepot")
     private List<LigneCommandeEntrepot> ligneCommandeEntrepots;
 }
