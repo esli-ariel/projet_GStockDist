@@ -35,4 +35,7 @@ public class Commandeentrepot extends AbstractEntity {
     @ManyToOne
     @JoinColumn(name = "entrepot_id") // Vérifiez l'existence de cette colonne en BDD
     private Entrepot entrepot;
+
+    @OneToMany(mappedBy = "commandeEntrepot")
+    private List<LigneCommandeEntrepot> ligneCommandeEntrepots;
 }

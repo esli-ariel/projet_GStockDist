@@ -21,8 +21,6 @@ public class Entrepot extends AbstractEntity{
     @Column(name = "photo")
     private String photo;
 
-    @Column(name = "mail")
-    private String mail;
 
     @Column(name = "numTel")
     private String numTel;
