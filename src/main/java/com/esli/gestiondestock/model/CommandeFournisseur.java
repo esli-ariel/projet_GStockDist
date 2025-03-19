@@ -35,4 +35,8 @@ public class CommandeFournisseur extends AbstractEntity{
     @ManyToOne
     @JoinColumn(name = "idfournisseur") // Assurez-vous que cette colonne existe en base de données
     private Fournisseur fournisseur;
+
+    @OneToMany(mappedBy = "commandeFournisseur")
+    private List<LigneCommandeFournisseur> ligneCommandeFournisseurs;
+
 }

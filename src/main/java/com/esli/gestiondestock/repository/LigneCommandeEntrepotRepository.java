@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface LigneCommandeEntrepotRepository extends JpaRepository<LigneCommandeEntrepot, Integer> {
 
 
-  List<LigneCommandeEntrepot> findAllByCommandeClientId(Integer id);
+  List<LigneCommandeEntrepot> findAllByCommandeEntrepotId(Integer id);
 
-  List<LigneCommandeEntrepot> findAllByArticleId(Integer id);
+  List<LigneCommandeEntrepot> findAllByProduitId(Integer id);
 }

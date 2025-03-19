@@ -1,11 +1,7 @@
 package com.esli.gestiondestock.dto;
 
-import com.esli.gestiondestock.model.CommandeFournisseur;
-import com.esli.gestiondestock.model.Commandeentrepot;
 import com.esli.gestiondestock.model.Entrepot;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Column;
-import jakarta.persistence.OneToMany;
 
 import java.util.List;
 import lombok.Builder;
@@ -26,7 +22,7 @@ public class EntrepotDto {
     private List<CommandeFournisseurDto> commandeFournisseurs;
 
     @JsonIgnore
-    private List<CommandeentrepotDto> commandeentrepots;
+    private List<CommandeEntrepotDto> commandeentrepots;
 
     public static EntrepotDto fromEntity(Entrepot entrepot) {
         if (entrepot == null) {

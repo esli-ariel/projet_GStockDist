@@ -4,13 +4,13 @@ package com.esli.gestiondestock.validator;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.esli.gestiondestock.dto.CommandeentrepotDto;
+import com.esli.gestiondestock.dto.CommandeEntrepotDto;
 import org.springframework.util.StringUtils;
 
-public class CommandeentrepotValidator {
+public class CommandeEntrepotValidator {
 
 
-  public static List<String> validate(CommandeentrepotDto dto) {
+  public static List<String> validate(CommandeEntrepotDto dto) {
     List<String> errors = new ArrayList<>();
     if (dto == null) {
       errors.add("Veuillez renseigner le code de la commande");

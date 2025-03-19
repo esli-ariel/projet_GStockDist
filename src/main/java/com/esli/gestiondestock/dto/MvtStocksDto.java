@@ -4,10 +4,8 @@ import java.math.BigDecimal;
 import java.time.Instant;
 
 import com.esli.gestiondestock.model.MvtStocks;
-import com.esli.gestiondestock.model.Produit;
 import com.esli.gestiondestock.model.TypeMvtStock;
-import com.esli.gestiondestock.model.srcMvtStock;
-import jakarta.persistence.*;
+import com.esli.gestiondestock.model.SrcMvtStock;
 import lombok.Builder;
 import lombok.Data;
 
@@ -25,7 +23,7 @@ public class MvtStocksDto {
 
     private TypeMvtStock typeMvt;
 
-    private srcMvtStock sourceMvt;
+    private SrcMvtStock sourceMvt;
 
     public static MvtStocksDto fromEntity( MvtStocks mvtStocks) {
         if (mvtStocks == null) {

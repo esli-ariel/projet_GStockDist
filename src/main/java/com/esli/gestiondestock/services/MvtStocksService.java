@@ -4,11 +4,13 @@ import com.esli.gestiondestock.dto.MvtStocksDto;
 import java.math.BigDecimal;
 import java.util.List;
 
-public interface MvtStkService {
+public interface MvtStocksService {
 
   BigDecimal stockReelProduit(Integer idProduit);
 
   List<MvtStocksDto> mvtStkProduit(Integer idProduit);
+
+  List<MvtStocksDto> MvtStocksProduit(Integer idProduit);
 
   MvtStocksDto entreeStock(MvtStocksDto dto);
 

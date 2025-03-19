@@ -1,13 +1,9 @@
 package com.esli.gestiondestock.dto;
 
-import java.math.BigDecimal;
 import java.util.List;
 
-import com.esli.gestiondestock.model.Commandeentrepot;
 import com.esli.gestiondestock.model.Magasin;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Column;
-import jakarta.persistence.OneToMany;
 import lombok.Builder;
 import lombok.Data;
 
@@ -23,7 +19,7 @@ public class MagasinDto {
     private String numTel;
 
     @JsonIgnore
-    private List<CommandeentrepotDto> CommandeEntrepots;
+    private List<CommandeEntrepotDto> CommandeEntrepots;
 
     public static MagasinDto fromEntity(Magasin magasin) {
         if (magasin == null) {

@@ -1,6 +1,5 @@
 package com.esli.gestiondestock.model;
 
-import ch.qos.logback.core.net.server.Client;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -17,7 +16,7 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "commandeentrepot")
-public class Commandeentrepot extends AbstractEntity {
+public class CommandeEntrepot extends AbstractEntity {
     @Column(name = "code")
     private String code;
 

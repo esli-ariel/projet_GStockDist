@@ -33,5 +33,5 @@ public class MvtStocks extends AbstractEntity{
 
     @Column(name = "sourcemvt")
     @Enumerated(EnumType.STRING)
-    private srcMvtStock sourceMvt;
+    private SrcMvtStock sourceMvt;
 }

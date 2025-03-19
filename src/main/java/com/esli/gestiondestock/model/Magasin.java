@@ -27,5 +27,5 @@ public class Magasin extends AbstractEntity {
     private String numTel;
 
     @OneToMany(mappedBy = "magasin")
-    private List<Commandeentrepot> CommandeEntrepots;
+    private List<CommandeEntrepot> CommandeEntrepots;
 }

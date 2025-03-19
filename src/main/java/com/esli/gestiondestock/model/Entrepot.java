@@ -25,9 +25,9 @@ public class Entrepot extends AbstractEntity{
     @Column(name = "numTel")
     private String numTel;
 
-    @OneToMany(mappedBy = "entrepot")
+    @OneToMany(mappedBy = "fournisseur")
     private List<CommandeFournisseur> commandeFournisseurs;
 
     @OneToMany(mappedBy = "entrepot")
-    private List<Commandeentrepot> commandeentrepots;
+    private List<CommandeEntrepot> commandeentrepots;
 }

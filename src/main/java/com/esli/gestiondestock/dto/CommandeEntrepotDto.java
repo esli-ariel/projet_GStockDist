@@ -1,10 +1,7 @@
 package com.esli.gestiondestock.dto;
 
-import com.esli.gestiondestock.model.Commandeentrepot;
-import com.esli.gestiondestock.model.Entrepot;
+import com.esli.gestiondestock.model.CommandeEntrepot;
 import com.esli.gestiondestock.model.EtatCommande;
-import com.esli.gestiondestock.model.Magasin;
-import jakarta.persistence.*;
 
 import java.time.Instant;
 import lombok.Builder;
@@ -12,7 +9,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class CommandeentrepotDto {
+public class CommandeEntrepotDto {
 
     private Integer id;
 
@@ -26,11 +23,11 @@ public class CommandeentrepotDto {
 
     private EntrepotDto entrepot;
 
-    public static CommandeentrepotDto fromEntity(Commandeentrepot commandeentrepot) {
+    public static CommandeEntrepotDto fromEntity(CommandeEntrepot commandeentrepot) {
         if (commandeentrepot == null) {
             return null;
         }
-        return CommandeentrepotDto.builder()
+        return CommandeEntrepotDto.builder()
                 .id(commandeentrepot.getId())
                 .code(commandeentrepot.getCode())
                 .dateCommande(commandeentrepot.getDateCommande())
@@ -40,11 +37,11 @@ public class CommandeentrepotDto {
 
     }
 
-    public static Commandeentrepot toEntity(CommandeentrepotDto dto) {
+    public static CommandeEntrepot toEntity(CommandeEntrepotDto dto) {
         if (dto == null) {
             return null;
         }
-        Commandeentrepot commandeentrepot = new Commandeentrepot();
+        CommandeEntrepot commandeentrepot = new CommandeEntrepot();
         commandeentrepot.setId(dto.getId());
         commandeentrepot.setCode(dto.getCode());
         commandeentrepot.setMagasin(MagasinDto.toEntity(dto.getMagasin()));
