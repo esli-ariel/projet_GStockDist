@@ -1,11 +1,11 @@
-package com.bouali.gestiondestock.services.strategy;
+package com.esli.gestiondestock.services.strategy;
 
-import com.bouali.gestiondestock.dto.ClientDto;
-import com.bouali.gestiondestock.exception.ErrorCodes;
-import com.bouali.gestiondestock.exception.InvalidOperationException;
-import com.bouali.gestiondestock.model.Client;
-import com.bouali.gestiondestock.services.ClientService;
-import com.bouali.gestiondestock.services.FlickrService;
+import com.esli.gestiondestock.dto.ClientDto;
+import com.esli.gestiondestock.exception.ErrorCodes;
+import com.esli.gestiondestock.exception.InvalidOperationException;
+import com.esli.gestiondestock.model.Client;
+import com.esli.gestiondestock.services.ClientService;
+import com.esli.gestiondestock.services.FlickrService;
 import com.flickr4java.flickr.FlickrException;
 import java.io.InputStream;
 import lombok.extern.slf4j.Slf4j;
