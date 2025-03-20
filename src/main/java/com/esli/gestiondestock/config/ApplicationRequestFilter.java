@@ -1,12 +1,12 @@
-package com.bouali.gestiondestock.config;
+package com.esli.gestiondestock.config;
 
-import com.bouali.gestiondestock.services.auth.ApplicationUserDetailsService;
-import com.bouali.gestiondestock.utils.JwtUtil;
+import com.esli.gestiondestock.services.auth.ApplicationUserDetailsService;
+import com.esli.gestiondestock.utils.JwtUtil;
 import java.io.IOException;
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -32,12 +32,10 @@ public class ApplicationRequestFilter extends OncePerRequestFilter {
     final String authHeader = request.getHeader("Authorization");
     String userEmail = null;
     String jwt = null;
-    String idEntreprise = null;
 
     if(authHeader != null && authHeader.startsWith("Bearer ")) {
       jwt = authHeader.substring(7);
       userEmail = jwtUtil.extractUsername(jwt);
-      idEntreprise = jwtUtil.extractIdEntreprise(jwt);
     }
 
     if (userEmail != null && SecurityContextHolder.getContext().getAuthentication() == null) {
@@ -52,7 +50,6 @@ public class ApplicationRequestFilter extends OncePerRequestFilter {
         SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
       }
     }
-    MDC.put("idEntreprise", idEntreprise);
     chain.doFilter(request, response);
   }
 }

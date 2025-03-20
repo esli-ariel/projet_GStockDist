@@ -3,8 +3,8 @@ package com.esli.gestiondestock.controller.api;
 import static com.esli.gestiondestock.utils.Constants.APP_ROOT;
 
 import com.esli.gestiondestock.dto.CategorieproduitDto;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+import io.swagger.annotations.ApiResponse;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -25,6 +25,7 @@ public interface CategorieproduitApi {
       CategorieproduitDto.class)
   @ApiResponses(value = {
       @ApiResponse(code = 200, message = "L'objet Categorieproduit cree / modifie"),
+
       @ApiResponse(code = 400, message = "L'objet Categorieproduit n'est pas valide")
   })
   CategorieproduitDto save(@RequestBody CategorieproduitDto dto);

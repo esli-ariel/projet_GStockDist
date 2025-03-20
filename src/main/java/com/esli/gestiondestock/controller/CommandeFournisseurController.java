@@ -1,10 +1,10 @@
-package com.bouali.gestiondestock.controller;
+package com.esli.gestiondestock.controller;
 
-import com.bouali.gestiondestock.controller.api.CommandeFournisseurApi;
-import com.bouali.gestiondestock.dto.CommandeFournisseurDto;
-import com.bouali.gestiondestock.dto.LigneCommandeFournisseurDto;
-import com.bouali.gestiondestock.model.EtatCommande;
-import com.bouali.gestiondestock.services.CommandeFournisseurService;
+import com.esli.gestiondestock.controller.api.CommandeFournisseurApi;
+import com.esli.gestiondestock.dto.CommandeFournisseurDto;
+import com.esli.gestiondestock.dto.LigneCommandeFournisseurDto;
+import com.esli.gestiondestock.model.EtatCommande;
+import com.esli.gestiondestock.services.CommandeFournisseurService;
 import java.math.BigDecimal;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,12 +42,12 @@ public class CommandeFournisseurController implements CommandeFournisseurApi {
 
   @Override
   public CommandeFournisseurDto updateArticle(Integer idCommande, Integer idLigneCommande, Integer idArticle) {
-    return commandeFournisseurService.updateArticle(idCommande, idLigneCommande, idArticle);
+    return commandeFournisseurService.updateProduit(idCommande, idLigneCommande, idArticle);
   }
 
   @Override
   public CommandeFournisseurDto deleteArticle(Integer idCommande, Integer idLigneCommande) {
-    return commandeFournisseurService.deleteArticle(idCommande, idLigneCommande);
+    return commandeFournisseurService.deleteProduit(idCommande, idLigneCommande);
   }
 
   @Override

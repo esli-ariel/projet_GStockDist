@@ -1,44 +1,44 @@
-package com.bouali.gestiondestock.controller;
+package com.esli.gestiondestock.controller;
 
-import com.bouali.gestiondestock.controller.api.CategoryApi;
-import com.bouali.gestiondestock.dto.CategoryDto;
-import com.bouali.gestiondestock.services.CategoryService;
+import com.esli.gestiondestock.controller.api.CategorieproduitApi;
+import com.esli.gestiondestock.dto.CategorieproduitDto;
+import com.esli.gestiondestock.services.CategorieproduitService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class CategorieproduitController implements CategoryApi {
+public class CategorieproduitController implements CategorieproduitApi {
 
-  private CategoryService categoryService;
+  private CategorieproduitService categorieproduitService;
 
   @Autowired
-  public CategorieproduitController(CategoryService categoryService) {
-    this.categoryService = categoryService;
+  public CategorieproduitController(CategorieproduitService categorieproduitService) {
+    this.categorieproduitService = categorieproduitService;
   }
 
   @Override
-  public CategoryDto save(CategoryDto dto) {
-    return categoryService.save(dto);
+  public CategorieproduitDto save(CategorieproduitDto dto) {
+    return categorieproduitService.save(dto);
   }
 
   @Override
-  public CategoryDto findById(Integer idCategory) {
-    return categoryService.findById(idCategory);
+  public CategorieproduitDto findById(Integer idCategorieproduit) {
+    return categorieproduitService.findById(idCategorieproduit);
   }
 
   @Override
-  public CategoryDto findByCode(String codeCategory) {
-    return categoryService.findByCode(codeCategory);
+  public CategorieproduitDto findByCode(String codeCategorieproduit) {
+    return categorieproduitService.findByCode(codeCategorieproduit);
   }
 
   @Override
-  public List<CategoryDto> findAll() {
-    return categoryService.findAll();
+  public List<CategorieproduitDto> findAll() {
+    return categorieproduitService.findAll();
   }
 
   @Override
   public void delete(Integer id) {
-    categoryService.delete(id);
+    categorieproduitService.delete(id);
   }
 }

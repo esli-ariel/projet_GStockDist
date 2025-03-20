@@ -1,8 +1,8 @@
-package com.bouali.gestiondestock.services.auth;
+package com.esli.gestiondestock.services.auth;
 
-import com.bouali.gestiondestock.dto.UtilisateurDto;
-import com.bouali.gestiondestock.model.auth.ExtendedUser;
-import com.bouali.gestiondestock.services.UtilisateurService;
+import com.esli.gestiondestock.dto.UtilisateurDto;
+import com.esli.gestiondestock.model.auth.ExtendedUser;
+import com.esli.gestiondestock.services.UtilisateurService;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +26,6 @@ public class ApplicationUserDetailsService implements UserDetailsService {
     List<SimpleGrantedAuthority> authorities = new ArrayList<>();
     utilisateur.getRoles().forEach(role -> authorities.add(new SimpleGrantedAuthority(role.getRoleName())));
 
-    return new ExtendedUser(utilisateur.getEmail(), utilisateur.getMoteDePasse(), utilisateur.getEntreprise().getId(), authorities);
+    return new ExtendedUser(utilisateur.getEmail(), utilisateur.getMoteDePasse(), authorities);
   }
 }

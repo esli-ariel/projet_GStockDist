@@ -36,12 +36,12 @@ public interface CommandeFournisseurApi {
   @PatchMapping(COMMANDE_FOURNISSEUR_ENDPOINT + "/update/fournisseur/{idCommande}/{idFournisseur}")
   CommandeFournisseurDto updateFournisseur(@PathVariable("idCommande") Integer idCommande, @PathVariable("idFournisseur") Integer idFournisseur);
 
-  @PatchMapping(COMMANDE_FOURNISSEUR_ENDPOINT + "/update/article/{idCommande}/{idLigneCommande}/{idArticle}")
-  CommandeFournisseurDto updateArticle(@PathVariable("idCommande") Integer idCommande,
-      @PathVariable("idLigneCommande") Integer idLigneCommande, @PathVariable("idArticle") Integer idArticle);
+  @PatchMapping(COMMANDE_FOURNISSEUR_ENDPOINT + "/update/produit/{idCommande}/{idLigneCommande}/{idProduit}")
+  CommandeFournisseurDto updateProduit(@PathVariable("idCommande") Integer idCommande,
+      @PathVariable("idLigneCommande") Integer idLigneCommande, @PathVariable("idProduit") Integer idProduit);
 
-  @DeleteMapping(COMMANDE_FOURNISSEUR_ENDPOINT + "/delete/article/{idCommande}/{idLigneCommande}")
-  CommandeFournisseurDto deleteArticle(@PathVariable("idCommande") Integer idCommande, @PathVariable("idLigneCommande") Integer idLigneCommande);
+  @DeleteMapping(COMMANDE_FOURNISSEUR_ENDPOINT + "/delete/produit/{idCommande}/{idLigneCommande}")
+  CommandeFournisseurDto deleteProduit(@PathVariable("idCommande") Integer idCommande, @PathVariable("idLigneCommande") Integer idLigneCommande);
 
   @GetMapping(FIND_COMMANDE_FOURNISSEUR_BY_ID_ENDPOINT)
   CommandeFournisseurDto findById(@PathVariable("idCommandeFournisseur") Integer id);

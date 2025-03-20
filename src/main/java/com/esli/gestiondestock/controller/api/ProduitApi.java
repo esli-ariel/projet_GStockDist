@@ -61,11 +61,15 @@ public interface ProduitApi {
   @GetMapping(value = APP_ROOT + "/articles/historique/commandeclient/{idProduit}", produces = MediaType.APPLICATION_JSON_VALUE)
   List<LigneCommandeEntrepotDto> findHistoriaueCommandeClient(@PathVariable("idProduit") Integer idProduit);
 
+  List<LigneCommandeEntrepotDto> findHistoriaueCommandeEntrepot(Integer idProduit);
+
   @GetMapping(value = APP_ROOT + "/articles/historique/commandefournisseur/{idArticle}", produces = MediaType.APPLICATION_JSON_VALUE)
   List<LigneCommandeFournisseurDto> findHistoriqueCommandeFournisseur(@PathVariable("idProduit") Integer idProduit);
 
   @GetMapping(value = APP_ROOT + "/articles/filter/category/{idCategory}", produces = MediaType.APPLICATION_JSON_VALUE)
   List<ProduitDto> findAllProduitByIdCategory(@PathVariable("idCategory") Integer idCategory);
+
+  List<ProduitDto> findAllProduitByIdCategorieproduit(Integer idCategorieproduit);
 
   @DeleteMapping(value = APP_ROOT + "/articles/delete/{idProduit}")
   @ApiOperation(value = "Supprimer un article", notes = "Cette methode permet de supprimer un article par ID")

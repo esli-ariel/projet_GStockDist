@@ -1,4 +1,4 @@
-package com.bouali.gestiondestock.config;
+package com.esli.gestiondestock.config;
 
 import com.flickr4java.flickr.Flickr;
 import com.flickr4java.flickr.FlickrException;

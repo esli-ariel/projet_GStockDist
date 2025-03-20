@@ -1,6 +1,6 @@
 package com.esli.gestiondestock.controller.api;
 
-import static com.bouali.gestiondestock.utils.Constants.APP_ROOT;
+import static com.esli.gestiondestock.utils.Constants.APP_ROOT;
 
 import com.esli.gestiondestock.dto.CommandeEntrepotDto;
 import com.esli.gestiondestock.dto.LigneCommandeEntrepotDto;
@@ -20,39 +20,39 @@ import org.springframework.web.bind.annotation.RequestBody;
 public interface CommandeEntrepotApi {
 
 
-  @PostMapping(APP_ROOT + "/commandesclients/create")
+  @PostMapping(APP_ROOT + "/commandesentrepots/create")
   ResponseEntity<CommandeEntrepotDto> save(@RequestBody CommandeEntrepotDto dto);
 
-  @PatchMapping(APP_ROOT + "/commandesclients/update/etat/{idCommande}/{etatCommande}")
+  @PatchMapping(APP_ROOT + "/commandesentrepots/update/etat/{idCommande}/{etatCommande}")
   ResponseEntity<CommandeEntrepotDto> updateEtatCommande(@PathVariable("idCommande") Integer idCommande, @PathVariable("etatCommande") EtatCommande etatCommande);
 
-  @PatchMapping(APP_ROOT + "/commandesclients/update/quantite/{idCommande}/{idLigneCommande}/{quantite}")
+  @PatchMapping(APP_ROOT + "/commandesentrepots/update/quantite/{idCommande}/{idLigneCommande}/{quantite}")
   ResponseEntity<CommandeEntrepotDto> updateQuantiteCommande(@PathVariable("idCommande") Integer idCommande,
       @PathVariable("idLigneCommande") Integer idLigneCommande, @PathVariable("quantite") BigDecimal quantite);
 
-  @PatchMapping(APP_ROOT + "/commandesclients/update/client/{idCommande}/{idClient}")
+  @PatchMapping(APP_ROOT + "/commandesentrepots/update/entrepot/{idCommande}/{idEntrepot}")
   ResponseEntity<CommandeEntrepotDto> updateEntrepot(@PathVariable("idCommande") Integer idCommande, @PathVariable("idEntrepot") Integer idEntrepot);
 
-  @PatchMapping(APP_ROOT + "/commandesclients/update/article/{idCommande}/{idLigneCommande}/{idArticle}")
-  ResponseEntity<CommandeEntrepotDto> updateArticle(@PathVariable("idCommande") Integer idCommande,
-      @PathVariable("idLigneCommande") Integer idLigneCommande, @PathVariable("idArticle") Integer idArticle);
+  @PatchMapping(APP_ROOT + "/commandesentrepots/update/produit/{idCommande}/{idLigneCommande}/{idProduit}")
+  ResponseEntity<CommandeEntrepotDto> updateProduit(@PathVariable("idCommande") Integer idCommande,
+      @PathVariable("idLigneCommande") Integer idLigneCommande, @PathVariable("idProduit") Integer idProduit);
 
-  @DeleteMapping(APP_ROOT + "/commandesclients/delete/article/{idCommande}/{idLigneCommande}")
-  ResponseEntity<CommandeEntrepotDto> deleteArticle(@PathVariable("idCommande") Integer idCommande, @PathVariable("idLigneCommande") Integer idLigneCommande);
+  @DeleteMapping(APP_ROOT + "/commandesentrepots/delete/produit/{idCommande}/{idLigneCommande}")
+  ResponseEntity<CommandeEntrepotDto> deleteProduit(@PathVariable("idCommande") Integer idCommande, @PathVariable("idLigneCommande") Integer idLigneCommande);
 
-  @GetMapping(APP_ROOT + "/commandesclients/{idCommandeClient}")
-  ResponseEntity<CommandeEntrepotDto> findById(@PathVariable Integer idCommandeClient);
+  @GetMapping(APP_ROOT + "/commandesentrepots/{idCommandeEntrepot}")
+  ResponseEntity<CommandeEntrepotDto> findById(@PathVariable Integer idCommandeEntrepot);
 
-  @GetMapping(APP_ROOT + "/commandesclients/filter/{codeCommandeClient}")
-  ResponseEntity<CommandeEntrepotDto> findByCode(@PathVariable("codeCommandeClient") String code);
+  @GetMapping(APP_ROOT + "/commandesentrepots/filter/{codeCommandeEntrepot}")
+  ResponseEntity<CommandeEntrepotDto> findByCode(@PathVariable("codeCommandeEntrepot") String code);
 
-  @GetMapping(APP_ROOT + "/commandesclients/all")
+  @GetMapping(APP_ROOT + "/commandesentrepots/all")
   ResponseEntity<List<CommandeEntrepotDto>> findAll();
 
-  @GetMapping(APP_ROOT + "/commandesclients/lignesCommande/{idCommande}")
+  @GetMapping(APP_ROOT + "/commandesentrepots/lignesCommande/{idCommande}")
   ResponseEntity<List<LigneCommandeEntrepotDto>> findAllLignesCommandesEntrepotByCommandeEntrepotId(@PathVariable("idCommande") Integer idCommande);
 
-  @DeleteMapping(APP_ROOT + "/commandesclients/delete/{idCommandeEntrepot}")
+  @DeleteMapping(APP_ROOT + "/commandesentrepots/delete/{idCommandeEntrepot}")
   ResponseEntity<Void> delete(@PathVariable("idCommandeEntrepot") Integer id);
 
 }
